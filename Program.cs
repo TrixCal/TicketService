@@ -1,13 +1,17 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using NLog.Web;
 
 namespace TicketService
 {
     class Program
     {
+        private static NLog.Logger logger = NLogBuilder.ConfigureNLog(Directory.GetCurrentDirectory() + "\\nlog.config").GetCurrentClassLogger();
         static void Main(string[] args)
         {
+            logger.Info("Program started");
+            //Initalize
             string file = "Ticket.csv";
             string choice;
             //Creates a ticket list from file to use during program
@@ -93,6 +97,7 @@ namespace TicketService
                 Console.Clear();
             }
             while(choice == "1" || choice == "2" || choice == "3");
+            logger.Info("Program ended");
         }
     }
 }
