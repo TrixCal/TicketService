@@ -1,0 +1,57 @@
+2020-10-05 09:05:15.3143|INFO|TicketService.Program|Program started
+2020-10-05 09:05:18.3097|INFO|TicketService.Program|Program ended
+2020-10-05 09:05:18.3202|WARN|TicketService.Program|No Tickets Available
+2020-10-05 09:05:47.6803|INFO|TicketService.Program|Program ended
+2020-10-05 09:05:48.4816|INFO|TicketService.Program|Program ended
+2020-10-05 09:06:56.4026|INFO|TicketService.Program|Program started
+2020-10-05 09:06:57.9914|INFO|TicketService.Program|Program ended
+2020-10-05 09:07:52.7668|INFO|TicketService.Program|New ticket added. Id:1
+2020-10-05 09:08:19.7935|INFO|TicketService.Program|Program ended
+2020-10-05 09:12:06.1397|INFO|TicketService.Program|Program ended
+2020-10-05 09:12:09.0895|INFO|TicketService.Program|Program ended
+2020-10-05 09:12:11.4107|INFO|TicketService.Program|Program ended
+2020-10-05 09:12:17.5746|INFO|TicketService.Program|Program started
+2020-10-05 09:12:28.6895|INFO|TicketService.Program|Program ended
+2020-10-05 09:12:54.4809|INFO|TicketService.Program|New ticket added. Id:1
+2020-10-05 09:12:56.0919|INFO|TicketService.Program|Program ended
+2020-10-05 09:12:57.4010|INFO|TicketService.Program|Program ended
+2020-10-05 09:13:20.7309|INFO|TicketService.Program|Program ended
+2020-10-05 09:13:20.8022|INFO|TicketService.Program|Program ended
+2020-10-05 09:13:31.4472|INFO|TicketService.Program|Program started
+2020-10-05 09:13:32.5915|INFO|TicketService.Program|Program ended
+2020-10-05 09:14:00.1668|INFO|TicketService.Program|New ticket added. Id:1
+2020-10-05 09:14:01.8315|INFO|TicketService.Program|Program ended
+2020-10-05 09:14:16.7314|INFO|TicketService.Program|Program ended
+2020-10-05 09:14:54.5941|INFO|TicketService.Program|Program ended
+2020-10-05 09:14:54.6427|INFO|TicketService.Program|Program ended
+2020-10-05 09:15:03.0028|INFO|TicketService.Program|Program started
+2020-10-05 09:15:14.7750|INFO|TicketService.Program|Program ended
+2020-10-05 09:15:43.0092|INFO|TicketService.Program|New ticket added. Id:1
+2020-10-05 09:15:48.1346|INFO|TicketService.Program|Program ended
+2020-10-05 09:16:51.8594|INFO|TicketService.Program|Program ended
+2020-10-05 09:16:51.8752|INFO|TicketService.Program|Program ended
+2020-10-05 09:16:58.4508|INFO|TicketService.Program|Program started
+2020-10-05 09:17:00.2755|INFO|TicketService.Program|Program ended
+2020-10-05 09:17:28.5779|INFO|TicketService.Program|New ticket added. Id:1
+2020-10-05 09:17:29.7372|INFO|TicketService.Program|Program ended
+2020-10-05 09:18:05.4478|INFO|TicketService.Program|Program ended
+2020-10-05 09:18:07.5380|INFO|TicketService.Program|Ticket to remove: 1
+2020-10-05 09:18:07.5514|INFO|TicketService.Program|Ticket Removed. TicketService.Ticket
+2020-10-05 09:19:18.4268|INFO|TicketService.Program|Program started
+2020-10-05 09:19:21.0597|INFO|TicketService.Program|Program ended
+2020-10-05 09:19:28.8009|INFO|TicketService.Program|New ticket added. Id:1
+2020-10-05 09:19:29.8196|INFO|TicketService.Program|Program ended
+2020-10-05 09:19:47.7297|INFO|TicketService.Program|Program ended
+2020-10-05 09:19:49.1372|INFO|TicketService.Program|Ticket to remove: 1
+2020-10-05 09:19:49.1616|INFO|TicketService.Program|Ticket Removed. TicketService.Ticket
+2020-10-05 09:24:15.5349|INFO|TicketService.Program|Program started
+2020-10-05 09:24:18.2391|INFO|TicketService.Program|Program ended
+2020-10-05 09:24:24.3506|INFO|TicketService.Program|New ticket added. Id:1
+2020-10-05 09:24:26.1106|INFO|TicketService.Program|Program ended
+2020-10-05 09:24:28.1695|INFO|TicketService.Program|Program ended
+2020-10-05 09:24:29.0292|INFO|TicketService.Program|Ticket to remove: 1
+2020-10-05 09:24:29.0767|INFO|TicketService.Program|Removed Ticket: 1
+2020-10-05 09:24:31.9188|INFO|TicketService.Program|Program ended
+2020-10-05 09:24:31.9304|WARN|TicketService.Program|No Tickets Available
+2020-10-05 09:24:33.8091|INFO|TicketService.Program|Program ended
+2020-10-05 09:24:33.8201|INFO|TicketService.Program|Program ended

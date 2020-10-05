@@ -25,7 +25,7 @@ namespace TicketService
         }
         public string Display()
         {
-            return $"{ticketID}) {status}\nStatus) {priority}\nPriority) {submitter}\nSubmitter) {assigned}\nAssigned) {string.Join(", ", watching)}\nWatching) {6}";
+            return $"Ticket {ticketID} \nSummary) {summary} \nStatus) {status}\nPriority) {priority}\nSubmitter) {submitter}\nAssigned) {assigned}\nWatching) {string.Join(", ", watching)}";
         }
     }
 }

@@ -32,7 +32,7 @@ namespace TicketService
             }
             do
             {
-                Console.Clear();
+                Console.WriteLine();
                 Console.WriteLine("1) View current tickets");
                 Console.WriteLine("2) Submit new ticket");
                 Console.WriteLine("3) Remove ticket");
@@ -47,7 +47,7 @@ namespace TicketService
                             Console.Clear();
                             foreach(Ticket t in tickets)
                             {
-                                t.Display();
+                                Console.WriteLine(t.Display());
                                 Console.WriteLine("----------------------");
                             }
                         }
@@ -88,12 +88,12 @@ namespace TicketService
                             Console.WriteLine("Enter ticket ID to remove: ");
                             string ticketID = Console.ReadLine();
                             logger.Info($"Ticket to remove: {ticketID}");
-                            foreach(Ticket ticket in tickets)
+                            for(int i = 0; i < tickets.Count; i++)
                             {
-                                if(ticket.ticketID == Int32.Parse(ticketID))
+                                if(tickets[i].ticketID == Int32.Parse(ticketID))
                                 {
-                                    tickets.Remove(ticket);
-                                    logger.Info($"Ticket Removed. {ticket}");
+                                    logger.Info($"Removed Ticket: {ticketID}");
+                                    tickets.RemoveAt(i);
                                 }
                             }
                         }
@@ -103,8 +103,6 @@ namespace TicketService
                         }
                     break;
                 }
-                Console.ReadKey();
-                Console.Clear();
             }
             while(choice == "1" || choice == "2" || choice == "3");
             logger.Info("Program ended");
