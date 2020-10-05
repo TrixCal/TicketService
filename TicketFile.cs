@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 using NLog.Web;
 
@@ -13,6 +14,7 @@ namespace TicketService
         public TicketFile(string ticketFilePath)
         {
             filePath = ticketFilePath;
+            tickets = new List<Ticket>();
             //Add tickets from data file to list
             try
             {
@@ -35,16 +37,24 @@ namespace TicketService
         {
             try
             {
+                //Generate ticket ID
+                ticket.ticketID = tickets == null ? tickets.Max(m => m.ticketID) + 1 : 1;
+                //Add ticket to file
                 StreamWriter sw = new StreamWriter(filePath, true);
                 sw.WriteLine($"{ticket.ticketID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigned},{string.Join("|", ticket.watching)}");
                 sw.Close();
+                //Add ticket to list
                 tickets.Add(ticket);
                 logger.Info($"Ticket ID {ticket.ticketID} Added.");
             }
-            catch
+            catch (Exception ex)
             {
-
+                logger.Error(ex.Message);
             }
+        }
+        public void RemoveTicket(int ticketId)
+        {
+            
         }
     }
 }

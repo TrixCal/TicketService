@@ -55,3 +55,52 @@
 2020-10-05 09:24:31.9304|WARN|TicketService.Program|No Tickets Available
 2020-10-05 09:24:33.8091|INFO|TicketService.Program|Program ended
 2020-10-05 09:24:33.8201|INFO|TicketService.Program|Program ended
+2020-10-05 10:10:58.5284|INFO|TicketService.Program|Program started
+2020-10-05 10:10:58.6197|ERROR|TicketService.TicketFile|Object reference not set to an instance of an object.
+2020-10-05 10:11:11.7595|INFO|TicketService.Program|Program ended
+2020-10-05 10:13:25.2049|INFO|TicketService.Program|Program started
+2020-10-05 10:13:25.3039|ERROR|TicketService.TicketFile|Object reference not set to an instance of an object.
+2020-10-05 10:13:28.2237|INFO|TicketService.Program|Program ended
+2020-10-05 10:14:22.8250|INFO|TicketService.Program|Program started
+2020-10-05 10:14:22.8901|ERROR|TicketService.TicketFile|Object reference not set to an instance of an object.
+2020-10-05 10:14:24.3369|INFO|TicketService.Program|Program ended
+2020-10-05 10:15:59.4336|INFO|TicketService.Program|Program started
+2020-10-05 10:15:59.5246|INFO|TicketService.TicketFile|Tickets in file 0.
+2020-10-05 10:16:00.5365|INFO|TicketService.Program|Program ended
+2020-10-05 10:16:00.5365|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:16:04.6087|INFO|TicketService.Program|Program ended
+2020-10-05 10:21:31.9431|INFO|TicketService.Program|Program started
+2020-10-05 10:21:32.0543|INFO|TicketService.TicketFile|Tickets in file 0.
+2020-10-05 10:21:34.3144|INFO|TicketService.Program|Program ended
+2020-10-05 10:22:55.2198|INFO|TicketService.Program|Program started
+2020-10-05 10:22:55.3194|INFO|TicketService.TicketFile|Tickets in file 0.
+2020-10-05 10:22:56.7468|INFO|TicketService.Program|Program ended
+2020-10-05 10:23:29.1851|ERROR|TicketService.TicketFile|Sequence contains no elements
+2020-10-05 10:23:32.9175|INFO|TicketService.Program|Program ended
+2020-10-05 10:23:32.9317|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:23:37.4206|INFO|TicketService.Program|Program ended
+2020-10-05 10:23:37.4293|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:23:37.9775|INFO|TicketService.Program|Program ended
+2020-10-05 10:23:37.9963|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:23:38.5174|INFO|TicketService.Program|Program ended
+2020-10-05 10:23:38.5271|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:25:51.9681|INFO|TicketService.Program|Program ended
+2020-10-05 10:26:20.7959|ERROR|TicketService.TicketFile|Sequence contains no elements
+2020-10-05 10:26:22.0619|INFO|TicketService.Program|Program ended
+2020-10-05 10:26:22.0752|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:28:31.9681|INFO|TicketService.Program|Program ended
+2020-10-05 10:29:02.2538|ERROR|TicketService.TicketFile|Sequence contains no elements
+2020-10-05 10:30:03.0918|INFO|TicketService.Program|Program ended
+2020-10-05 10:30:15.3910|ERROR|TicketService.TicketFile|Sequence contains no elements
+2020-10-05 10:31:22.0236|INFO|TicketService.Program|Program ended
+2020-10-05 10:31:24.7128|ERROR|TicketService.TicketFile|Sequence contains no elements
+2020-10-05 10:31:32.9425|INFO|TicketService.Program|Program ended
+2020-10-05 10:31:32.9425|INFO|TicketService.Program|Program ended
+2020-10-05 10:31:42.5509|INFO|TicketService.Program|Program started
+2020-10-05 10:31:42.7120|INFO|TicketService.TicketFile|Tickets in file 0.
+2020-10-05 10:31:44.5638|INFO|TicketService.Program|Program ended
+2020-10-05 10:31:46.4991|INFO|TicketService.TicketFile|Ticket ID 1 Added.
+2020-10-05 10:31:57.2634|INFO|TicketService.Program|Program ended
+2020-10-05 10:32:00.4035|INFO|TicketService.Program|Program ended
+2020-10-05 10:32:21.6852|INFO|TicketService.Program|Program ended
+2020-10-05 10:32:21.6952|INFO|TicketService.Program|Program ended

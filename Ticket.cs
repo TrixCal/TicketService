@@ -15,13 +15,12 @@ namespace TicketService
 
         public Ticket(string[] ticketArray)
         {
-            ticketID = Int32.Parse(ticketArray[0]);
-            summary = ticketArray[1];
-            status = ticketArray[2];
-            priority = ticketArray[3];
-            submitter = ticketArray[4];
-            assigned = ticketArray [5];
-            watching = new List<string>(ticketArray[6].Split("|"));
+            summary = ticketArray[0];
+            status = ticketArray[1];
+            priority = ticketArray[2];
+            submitter = ticketArray[3];
+            assigned = ticketArray [4];
+            watching = new List<string>(ticketArray[5].Split("|"));
         }
         public string Display()
         {

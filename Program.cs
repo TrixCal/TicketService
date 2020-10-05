@@ -13,8 +13,8 @@ namespace TicketService
         {
             logger.Info("Program started");
             //Initalize
-            string file = "Ticket.csv";
-            TicketFile ticketFile = new TicketFile("Ticket.csv");
+
+            TicketFile ticketFile = new TicketFile(Directory.GetCurrentDirectory() + "\\Ticket.csv");
             string choice;
             do
             {
@@ -43,44 +43,38 @@ namespace TicketService
                         }
                     break;
                     case "2":
-                        string[] newTicket = new string[7];
-                        //Makes ticket num next in line
-                        newTicket[0] = (ticketFile.tickets.Max(m => m.ticketID) + 1).ToString();
-                        
+                        string[] newTicket = new string[6];
+
                         Console.WriteLine("Enter ticket summary: ");
-                        newTicket[1] = Console.ReadLine();
+                        newTicket[0] = Console.ReadLine();
 
                         Console.WriteLine("Ticket status: ");
-                        newTicket[2] = Console.ReadLine();
+                        newTicket[1] = Console.ReadLine();
 
                         Console.WriteLine("Ticket priority: ");
-                        newTicket[3] = Console.ReadLine();
+                        newTicket[2] = Console.ReadLine();
 
                         Console.WriteLine("Submitted by: ");
-                        newTicket[4] = Console.ReadLine();
+                        newTicket[3] = Console.ReadLine();
 
                         Console.WriteLine("Assigned to: ");
-                        newTicket[5] = Console.ReadLine();
+                        newTicket[4] = Console.ReadLine();
 
                         Console.WriteLine("Watched by: ");
-                        newTicket[6] = Console.ReadLine();
-                        
+                        newTicket[5] = Console.ReadLine();
+
                         ticketFile.AddTicket(new Ticket(newTicket));               
                     break;
                     case "3":
-                        if(tickets.Count > 0)
+                        if(ticketFile.tickets.Count > 0)
                         {
                             Console.WriteLine("Enter ticket ID to remove: ");
-                            string ticketID = Console.ReadLine();
-                            logger.Info($"Ticket to remove: {ticketID}");
-                            for(int i = 0; i < tickets.Count; i++)
+                            int ticketID;
+                            if(!int.TryParse(Console.ReadLine(), out ticketID))
                             {
-                                if(tickets[i].ticketID == Int32.Parse(ticketID))
-                                {
-                                    logger.Info($"Removed Ticket: {ticketID}");
-                                    tickets.RemoveAt(i);
-                                }
+                                logger.Error("ticketID not int");
                             }
+                            ticketFile.RemoveTicket(ticketID);
                         }
                         else
                         {
