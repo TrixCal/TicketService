@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketSystem\\TicketProgram\\TicketProgram.csproj": {}
+    "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketService\\TicketProgram.csproj": {}
   },
   "projects": {
-    "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketSystem\\TicketProgram\\TicketProgram.csproj": {
+    "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketService\\TicketProgram.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketSystem\\TicketProgram\\TicketProgram.csproj",
+        "projectUniqueName": "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketService\\TicketProgram.csproj",
         "projectName": "TicketProgram",
-        "projectPath": "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketSystem\\TicketProgram\\TicketProgram.csproj",
+        "projectPath": "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketService\\TicketProgram.csproj",
         "packagesPath": "C:\\Users\\trayt\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketSystem\\TicketProgram\\obj\\",
+        "outputPath": "C:\\Users\\trayt\\OneDrive\\Homework\\NetDatabase\\TicketService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[4.9.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Collections.Generic;
 
 namespace TicketService
 {
@@ -9,8 +10,15 @@ namespace TicketService
         {
             string file = "Ticket.csv";
             string choice;
-            StreamWriter sw = new StreamWriter(file, true);
-            sw.Close();
+            //Creates a ticket list from file to use during program
+            List<Ticket> tickets = new List<Ticket>();
+            StreamReader sr = new StreamReader(file);
+            while(!sr.EndOfStream)
+            {
+                string line = sr.ReadLine();
+                string[] arr = line.Split(",");
+                tickets.Add(new Ticket(arr));
+            }
             do
             {
                 Console.Clear();
@@ -22,20 +30,14 @@ namespace TicketService
                 switch(choice)
                 {
                     case "1":
-                        if(File.Exists(file))
+                        if(tickets.Count > 0)
                         {
                             Console.Clear();
-                            StreamReader sr = new StreamReader(file);
-                            while(!sr.EndOfStream)
+                            foreach(Ticket t in tickets)
                             {
-                                //Pull File and Read Line
-                                string line = sr.ReadLine();
-                                //Split Line by Comma
-                                string[] arr = line.Split(",");
-                                Console.WriteLine("---------------------------------");
-                                Console.WriteLine("{0}) {1}\nStatus) {2}\nPriority) {3}\nSubmitter) {4}\nAssigned) {5}\nWatching) {6}", arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6]);
+                                t.Display();
+                                Console.WriteLine();
                             }
-                            sr.Close();
                         }
                         else
                         {
@@ -44,20 +46,8 @@ namespace TicketService
                     break;
                     case "2":
                         string[] newTicket = new string[7];
-                        //Read the file and pull each individual ticket
-                        int i = 1;
-                        if(File.Exists(file))
-                        {
-                            StreamReader sr = new StreamReader(file);
-                            while(!sr.EndOfStream)
-                            {
-                                sr.ReadLine();
-                                i++;
-                            }
-                            sr.Close();
-                        }
                         //Makes ticket num next in line
-                        newTicket[0] = i.ToString();
+                        newTicket[0] = (tickets.Count + 1).ToString();
                         
                         Console.WriteLine("Enter ticket summary: ");
                         newTicket[1] = Console.ReadLine();
@@ -76,50 +66,26 @@ namespace TicketService
 
                         Console.WriteLine("Watched by: ");
                         newTicket[6] = Console.ReadLine();
-                        //Adding new ticket to file
-                        sw = new StreamWriter(file, true);
-                        if(i != 1)
-                        {
-                            sw.WriteLine();
-                        }
-                        sw.Write(newTicket[0]);
-                        for(int x = 1; x < 7; x++) 
-                        {
-                            sw.Write(",{0}",newTicket[x]);
-                        }
-                        sw.Close();
+                        //Add new ticket to List
+                        tickets.Add(new Ticket(newTicket));                      
                     break;
                     case "3":
-                        if(File.Exists(file))
+                        if(tickets.Count > 0)
                         {
                             Console.WriteLine("Enter ticket ID to remove: ");
                             string ticketID = Console.ReadLine();
 
-                            string[] tickets = new string[999];
-                            int totalTickets = 0;
-                            int removedTicket = 0;
-                            //Reads through the current list of tickets, and identifies which ticket in the array of tickets that will be removed
-                            StreamReader sr = new StreamReader(file);
-                            while(!sr.EndOfStream)
+                            foreach(Ticket ticket in tickets)
                             {
-                                tickets[totalTickets] = sr.ReadLine();
-                                string[] arr = tickets[totalTickets].Split(',');
-
-                                if(arr[0] == ticketID) removedTicket = totalTickets;
-
-                                totalTickets++;
-                            }
-                            sr.Close();
-                            //Writes the tickets back into the file, just excluding the removed ticket
-                            sw = new StreamWriter(file);
-                            for(int x = 0; x < totalTickets; x++)
-                            {
-                                if(x!=removedTicket)
+                                if(ticket.ticketID == Int32.Parse(ticketID))
                                 {
-                                    sw.WriteLine(tickets[x]);
+                                    tickets.Remove(ticket);
                                 }
                             }
-                            sw.Close();
+                        }
+                        else
+                        {
+                            Console.WriteLine("No Tickets Currently Exist");
                         }
                     break;
                 }
