@@ -1,13 +1,50 @@
 using System;
+using System.IO;
+using System.Collections.Generic;
+using NLog.Web;
 
 namespace TicketService
 {
     public class TicketFile
     {
         public string filePath { get; set; }
+        public List<Ticket> tickets { get; set; }
+        private static NLog.Logger logger = NLogBuilder.ConfigureNLog(Directory.GetCurrentDirectory() + "\\nlog.config").GetCurrentClassLogger();
         public TicketFile(string ticketFilePath)
         {
             filePath = ticketFilePath;
+            //Add tickets from data file to list
+            try
+            {
+                StreamReader sr = new StreamReader(filePath);
+                while(!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    string[] arr = line.Split(",");
+                    tickets.Add(new Ticket(arr));
+                }
+                sr.Close();
+                logger.Info($"Tickets in file {tickets.Count}.");
+            }
+            catch (Exception ex)
+            {
+                logger.Error(ex.Message);
+            }
+        }
+        public void AddTicket(Ticket ticket)
+        {
+            try
+            {
+                StreamWriter sw = new StreamWriter(filePath, true);
+                sw.WriteLine($"{ticket.ticketID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigned},{string.Join("|", ticket.watching)}");
+                sw.Close();
+                tickets.Add(ticket);
+                logger.Info($"Ticket ID {ticket.ticketID} Added.");
+            }
+            catch
+            {
+
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
 using System.Collections.Generic;
 using NLog.Web;
 
@@ -15,22 +16,6 @@ namespace TicketService
             string file = "Ticket.csv";
             TicketFile ticketFile = new TicketFile("Ticket.csv");
             string choice;
-            //Creates a ticket list from file to use during program
-            List<Ticket> tickets = new List<Ticket>();
-            if(File.Exists(file))
-            {
-                StreamReader sr = new StreamReader(file);
-                while(!sr.EndOfStream)
-                {
-                    string line = sr.ReadLine();
-                    string[] arr = line.Split(",");
-                    tickets.Add(new Ticket(arr));
-                }
-            }
-            else
-            {
-                logger.Warn("File does not exist. {file}");
-            }
             do
             {
                 Console.WriteLine();
@@ -43,10 +28,10 @@ namespace TicketService
                 switch(choice)
                 {
                     case "1":
-                        if(tickets.Count > 0)
+                        if(ticketFile.tickets.Count > 0)
                         {
                             Console.Clear();
-                            foreach(Ticket t in tickets)
+                            foreach(Ticket t in ticketFile.tickets)
                             {
                                 Console.WriteLine(t.Display());
                                 Console.WriteLine("----------------------");
@@ -60,7 +45,7 @@ namespace TicketService
                     case "2":
                         string[] newTicket = new string[7];
                         //Makes ticket num next in line
-                        newTicket[0] = (tickets.Count + 1).ToString();
+                        newTicket[0] = (ticketFile.tickets.Max(m => m.ticketID) + 1).ToString();
                         
                         Console.WriteLine("Enter ticket summary: ");
                         newTicket[1] = Console.ReadLine();
@@ -79,9 +64,8 @@ namespace TicketService
 
                         Console.WriteLine("Watched by: ");
                         newTicket[6] = Console.ReadLine();
-                        //Add new ticket to List
-                        tickets.Add(new Ticket(newTicket));
-                        logger.Info($"New ticket added. Id:{newTicket[0]}");                 
+                        
+                        ticketFile.AddTicket(new Ticket(newTicket));               
                     break;
                     case "3":
                         if(tickets.Count > 0)
