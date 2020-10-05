@@ -16,12 +16,19 @@ namespace TicketService
             string choice;
             //Creates a ticket list from file to use during program
             List<Ticket> tickets = new List<Ticket>();
-            StreamReader sr = new StreamReader(file);
-            while(!sr.EndOfStream)
+            if(File.Exists(file))
             {
-                string line = sr.ReadLine();
-                string[] arr = line.Split(",");
-                tickets.Add(new Ticket(arr));
+                StreamReader sr = new StreamReader(file);
+                while(!sr.EndOfStream)
+                {
+                    string line = sr.ReadLine();
+                    string[] arr = line.Split(",");
+                    tickets.Add(new Ticket(arr));
+                }
+            }
+            else
+            {
+                logger.Warn("File does not exist. {file}");
             }
             do
             {
@@ -31,6 +38,7 @@ namespace TicketService
                 Console.WriteLine("3) Remove ticket");
                 //input
                 choice = Console.ReadLine();
+                logger.Info("Program ended");
                 switch(choice)
                 {
                     case "1":
@@ -40,12 +48,12 @@ namespace TicketService
                             foreach(Ticket t in tickets)
                             {
                                 t.Display();
-                                Console.WriteLine();
+                                Console.WriteLine("----------------------");
                             }
                         }
                         else
                         {
-                            Console.WriteLine("No Tickets Currently Exist");
+                            logger.Warn("No Tickets Available");
                         }
                     break;
                     case "2":
@@ -71,25 +79,27 @@ namespace TicketService
                         Console.WriteLine("Watched by: ");
                         newTicket[6] = Console.ReadLine();
                         //Add new ticket to List
-                        tickets.Add(new Ticket(newTicket));                      
+                        tickets.Add(new Ticket(newTicket));
+                        logger.Info($"New ticket added. Id:{newTicket[0]}");                 
                     break;
                     case "3":
                         if(tickets.Count > 0)
                         {
                             Console.WriteLine("Enter ticket ID to remove: ");
                             string ticketID = Console.ReadLine();
-
+                            logger.Info($"Ticket to remove: {ticketID}");
                             foreach(Ticket ticket in tickets)
                             {
                                 if(ticket.ticketID == Int32.Parse(ticketID))
                                 {
                                     tickets.Remove(ticket);
+                                    logger.Info($"Ticket Removed. {ticket}");
                                 }
                             }
                         }
                         else
                         {
-                            Console.WriteLine("No Tickets Currently Exist");
+                            logger.Warn("No Tickets Available");
                         }
                     break;
                 }
