@@ -1,0 +1,13 @@
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\bin\Debug\netcoreapp3.1\TicketService.exe
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\bin\Debug\netcoreapp3.1\TicketService.deps.json
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\bin\Debug\netcoreapp3.1\TicketService.runtimeconfig.json
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\bin\Debug\netcoreapp3.1\TicketService.runtimeconfig.dev.json
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\bin\Debug\netcoreapp3.1\TicketService.dll
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\bin\Debug\netcoreapp3.1\TicketService.pdb
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\obj\Debug\netcoreapp3.1\TicketService.csprojAssemblyReference.cache
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\obj\Debug\netcoreapp3.1\TicketService.AssemblyInfoInputs.cache
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\obj\Debug\netcoreapp3.1\TicketService.AssemblyInfo.cs
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\obj\Debug\netcoreapp3.1\TicketService.csproj.CoreCompileInputs.cache
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\obj\Debug\netcoreapp3.1\TicketService.dll
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\obj\Debug\netcoreapp3.1\TicketService.pdb
+C:\Users\Trayman01\OneDrive\Programs\DotNetDB\TicketService\obj\Debug\netcoreapp3.1\TicketService.genruntimeconfig.cache

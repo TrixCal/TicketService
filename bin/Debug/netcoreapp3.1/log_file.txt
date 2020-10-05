@@ -104,3 +104,62 @@
 2020-10-05 10:32:00.4035|INFO|TicketService.Program|Program ended
 2020-10-05 10:32:21.6852|INFO|TicketService.Program|Program ended
 2020-10-05 10:32:21.6952|INFO|TicketService.Program|Program ended
+2020-10-05 10:38:24.9427|INFO|TicketService.Program|Program started
+2020-10-05 10:38:25.0087|INFO|TicketService.TicketFile|Tickets in file 0.
+2020-10-05 10:38:27.4647|INFO|TicketService.Program|Program ended
+2020-10-05 10:38:55.8683|INFO|TicketService.TicketFile|Ticket ID 1 Added.
+2020-10-05 10:38:58.2736|INFO|TicketService.Program|Program ended
+2020-10-05 10:39:29.2540|INFO|TicketService.Program|Program ended
+2020-10-05 10:40:26.3763|INFO|TicketService.Program|Program ended
+2020-10-05 10:40:26.3887|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:41:37.3967|INFO|TicketService.Program|Program ended
+2020-10-05 10:41:39.9068|ERROR|TicketService.TicketFile|The process cannot access the file 'C:\Users\trayt\OneDrive\Homework\NetDatabase\TicketService\Ticket.csv' because it is being used by another process.
+2020-10-05 10:41:54.5676|INFO|TicketService.Program|Program ended
+2020-10-05 10:41:54.5839|INFO|TicketService.Program|Program ended
+2020-10-05 10:43:52.0429|INFO|TicketService.Program|Program started
+2020-10-05 10:43:52.1229|INFO|TicketService.TicketFile|Tickets in file 0.
+2020-10-05 10:43:59.0806|INFO|TicketService.Program|Program ended
+2020-10-05 10:44:02.4531|INFO|TicketService.TicketFile|Ticket ID 1 Added.
+2020-10-05 10:44:04.1706|INFO|TicketService.Program|Program ended
+2020-10-05 10:44:05.9415|INFO|TicketService.TicketFile|Ticket ID 1 Added.
+2020-10-05 10:46:04.2239|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:07.3048|INFO|TicketService.TicketFile|Ticket ID 1 Removed.
+2020-10-05 10:46:08.2232|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:14.5639|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:14.9959|INFO|TicketService.TicketFile|Ticket ID 1 Removed.
+2020-10-05 10:46:16.1239|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:16.1336|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:46:17.8770|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:30.2477|INFO|TicketService.Program|Program Ended
+2020-10-05 10:46:38.1309|INFO|TicketService.Program|Program started
+2020-10-05 10:46:38.2602|INFO|TicketService.TicketFile|Tickets in file 0.
+2020-10-05 10:46:43.1643|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:45.2091|INFO|TicketService.TicketFile|Ticket ID 1 Added.
+2020-10-05 10:46:46.6943|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:49.1934|INFO|TicketService.TicketFile|Ticket ID 2 Added.
+2020-10-05 10:46:52.1344|INFO|TicketService.Program|Program ended
+2020-10-05 10:46:53.8414|INFO|TicketService.TicketFile|Ticket ID 3 Added.
+2020-10-05 10:46:58.6548|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:01.5772|INFO|TicketService.TicketFile|Ticket ID 4 Added.
+2020-10-05 10:47:02.9244|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:10.6642|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:12.3857|INFO|TicketService.TicketFile|Ticket ID 4 Removed.
+2020-10-05 10:47:13.6057|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:14.0778|INFO|TicketService.TicketFile|Ticket ID 3 Removed.
+2020-10-05 10:47:14.8650|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:19.1628|INFO|TicketService.TicketFile|Ticket ID 3 Added.
+2020-10-05 10:47:22.7554|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:27.9552|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:28.6252|INFO|TicketService.TicketFile|Ticket ID 3 Removed.
+2020-10-05 10:47:29.4052|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:29.9261|INFO|TicketService.TicketFile|Ticket ID 2 Removed.
+2020-10-05 10:47:30.8452|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:34.1554|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:35.0252|INFO|TicketService.TicketFile|Ticket ID 1 Removed.
+2020-10-05 10:47:36.5081|INFO|TicketService.Program|Program ended
+2020-10-05 10:47:36.5221|WARN|TicketService.Program|No Tickets Available
+2020-10-05 10:47:37.6056|INFO|TicketService.Program|Program ended
+2020-10-05 10:48:06.3215|INFO|TicketService.TicketFile|Ticket ID 1 Added.
+2020-10-05 10:48:08.2157|INFO|TicketService.Program|Program ended
+2020-10-05 10:48:09.8364|INFO|TicketService.Program|Program ended
+2020-10-05 10:48:10.2963|INFO|TicketService.Program|Program Ended

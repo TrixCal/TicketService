@@ -38,7 +38,7 @@ namespace TicketService
             try
             {
                 //Generate ticket ID
-                ticket.ticketID = tickets == null ? tickets.Max(m => m.ticketID) + 1 : 1;
+                ticket.ticketID = tickets.Any() ? tickets.Max(m => m.ticketID) + 1 : 1;
                 //Add ticket to file
                 StreamWriter sw = new StreamWriter(filePath, true);
                 sw.WriteLine($"{ticket.ticketID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigned},{string.Join("|", ticket.watching)}");
@@ -54,7 +54,19 @@ namespace TicketService
         }
         public void RemoveTicket(int ticketId)
         {
-            
+            //Removes ticket from List
+            for(int i = 0; i < tickets.Count; i++)
+            {
+                if(tickets[i].ticketID == ticketId) tickets.RemoveAt(i);
+            }
+            logger.Info($"Ticket ID {ticketId} Removed.");
+            //Rewrites file based on new list
+            StreamWriter sw = new StreamWriter(filePath);
+            foreach(Ticket ticket in tickets)
+            {
+                sw.WriteLine($"{ticket.ticketID},{ticket.summary},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigned},{string.Join("|", ticket.watching)}");
+            }
+            sw.Close();
         }
     }
 }

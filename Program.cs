@@ -33,8 +33,8 @@ namespace TicketService
                             Console.Clear();
                             foreach(Ticket t in ticketFile.tickets)
                             {
-                                Console.WriteLine(t.Display());
                                 Console.WriteLine("----------------------");
+                                Console.WriteLine(t.Display());
                             }
                         }
                         else
@@ -84,7 +84,6 @@ namespace TicketService
                 }
             }
             while(choice == "1" || choice == "2" || choice == "3");
-            logger.Info("Program ended");
         }
     }
 }
