@@ -13,6 +13,7 @@ namespace TicketService
             logger.Info("Program started");
             //Initalize
             string file = "Ticket.csv";
+            TicketFile ticketFile = new TicketFile("Ticket.csv");
             string choice;
             //Creates a ticket list from file to use during program
             List<Ticket> tickets = new List<Ticket>();
