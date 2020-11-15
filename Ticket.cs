@@ -17,6 +17,10 @@ namespace TicketService
         {
             return $"Ticket {ticketID} \nSummary) {summary} \nStatus) {status}\nPriority) {priority}\nSubmitter) {submitter}\nAssigned) {assigned}\nWatching) {string.Join(", ", watching)}";
         }
+        public override string ToString()
+        {
+            return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)}";
+        }
     }
     public class Bug : Ticket
     {
@@ -24,6 +28,10 @@ namespace TicketService
         public override string Display()
         {
             return $"Ticket {ticketID} \nSummary) {summary} \nStatus) {status}\nPriority) {priority}\nSubmitter) {submitter}\nAssigned) {assigned}\nWatching) {string.Join(", ", watching)}\nSeverity) {severity}";
+        }
+        public override string ToString()
+        {
+            return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{severity}";
         }
     }
     public class Enhancement : Ticket
@@ -36,6 +44,10 @@ namespace TicketService
         {
             return $"Ticket {ticketID} \nSummary) {summary} \nStatus) {status}\nPriority) {priority}\nSubmitter) {submitter}\nAssigned) {assigned}\nWatching) {string.Join(", ", watching)}\nSoftware) {software}\nCost) {cost:C}\nReason) {reason}\nEstimate) {estimate:C}";
         }
+        public override string ToString()
+        {
+            return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{software},{cost},{reason},{estimate}";
+        }
     }
     public class Task : Ticket
     {
@@ -44,6 +56,10 @@ namespace TicketService
         public override string Display()
         {
             return $"Ticket {ticketID} \nSummary) {summary} \nStatus) {status}\nPriority) {priority}\nSubmitter) {submitter}\nAssigned) {assigned}\nWatching) {string.Join(", ", watching)}\nProject Name) {projectName}\nDue Date) {duedate:d}";
+        }
+        public override string ToString()
+        {
+            return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{projectName},{duedate}";
         }
     }
 }
