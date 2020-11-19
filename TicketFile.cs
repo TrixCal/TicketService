@@ -23,7 +23,19 @@ namespace TicketService
                 {
                     string line = sr.ReadLine();
                     string[] arr = line.Split(",");
-                    tickets.Add(new Ticket(arr));
+                    //Add ticket through data in arr
+                    if(arr.Count() == 8)
+                    {
+
+                    }
+                    else if(arr.Count() == 11)
+                    {
+
+                    }
+                    else if(arr.Count() == 9)
+                    {
+
+                    }
                 }
                 sr.Close();
                 logger.Info($"Tickets in file {tickets.Count}.");
@@ -33,7 +45,7 @@ namespace TicketService
                 logger.Error(ex.Message);
             }
         }
-        public void AddTicket(Ticket ticket)
+        public void AddTicket(string type, Ticket ticket)
         {
             try
             {
