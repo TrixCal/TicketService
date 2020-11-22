@@ -152,38 +152,32 @@ namespace TicketService
                 logger.Error(ex.Message);
             }
         }
-        public void RemoveTicket(string group, int ticketID)
-        {
-            switch(group)
+        public void RemoveTicket(Bug ticket){
+            //Removes Enhancement from List
+            for(int i = 0; i < bugs.Count; i++)
             {
-                case "1":
-                    //Removes Bug from List
-                    for(int i = 0; i < bugs.Count; i++)
-                    {
-                        if(bugs[i].ticketID == ticketID) bugs.RemoveAt(i);
-                    }
-                    logger.Info($"Bug ID {ticketID} Removed.");
-                    RewriteFile();
-                break;
-                case "2":
-                    //Removes Enhancement from List
-                    for(int i = 0; i < enhancements.Count; i++)
-                    {
-                        if(enhancements[i].ticketID == ticketID) enhancements.RemoveAt(i);
-                    }
-                    logger.Info($"Enhancement ID {ticketID} Removed.");
-                    RewriteFile();
-                break;
-                case "3":
-                    //Removes Task from List
-                    for(int i = 0; i < tasks.Count; i++)
-                    {
-                        if(tasks[i].ticketID == ticketID) tasks.RemoveAt(i);
-                    }
-                    logger.Info($"Task ID {ticketID} Removed.");
-                    RewriteFile();
-                break;
+                if(bugs[i].ticketID == ticket.ticketID) bugs.RemoveAt(i);
             }
+            logger.Info($"Enhancement ID {ticket.ticketID} Removed.");
+            RewriteFile();
+        }
+        public void RemoveTicket(Enhancement ticket){
+            //Removes Enhancement from List
+            for(int i = 0; i < enhancements.Count; i++)
+            {
+                if(enhancements[i].ticketID == ticket.ticketID) enhancements.RemoveAt(i);
+            }
+            logger.Info($"Enhancement ID {ticket.ticketID} Removed.");
+            RewriteFile();
+        }
+        public void RemoveTicket(Task ticket){
+            //Removes Enhancement from List
+            for(int i = 0; i < tasks.Count; i++)
+            {
+                if(tasks[i].ticketID == ticket.ticketID) tasks.RemoveAt(i);
+            }
+            logger.Info($"Enhancement ID {ticket.ticketID} Removed.");
+            RewriteFile();
         }
     }
 }
