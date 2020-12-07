@@ -21,6 +21,25 @@ namespace TicketService
         {
             return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)}";
         }
+        public virtual void TicketSubmit()
+        {
+            Console.WriteLine("Enter ticket summary: ");
+            summary = Console.ReadLine();
+            Console.WriteLine("Ticket status: ");
+            status = Console.ReadLine();
+            Console.WriteLine("Ticket priority: ");
+            priority = Console.ReadLine();
+            Console.WriteLine("Submitted by: ");
+            submitter = Console.ReadLine();
+            Console.WriteLine("Assigned to: ");
+            assigned = Console.ReadLine();
+            Console.WriteLine("Watched by: (Type \"0\" to Stop");
+            string watch;
+            do{
+                watch = Console.ReadLine();
+                if(watch != "0") watching.Add(watch);
+            } while(watch != "0");
+        }
     }
     public class Bug : Ticket
     {
@@ -32,6 +51,27 @@ namespace TicketService
         public override string ToString()
         {
             return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{severity}";
+        }
+        public override void TicketSubmit()
+        {
+            Console.WriteLine("Enter ticket summary: ");
+            summary = Console.ReadLine();
+            Console.WriteLine("Ticket status: ");
+            status = Console.ReadLine();
+            Console.WriteLine("Ticket priority: ");
+            priority = Console.ReadLine();
+            Console.WriteLine("Submitted by: ");
+            submitter = Console.ReadLine();
+            Console.WriteLine("Assigned to: ");
+            assigned = Console.ReadLine();
+            Console.WriteLine("Watched by: (Type \"0\" to Stop");
+            string watch;
+            do{
+                watch = Console.ReadLine();
+                if(watch != "0") watching.Add(watch);
+            } while(watch != "0");
+            Console.WriteLine("Severity: ");
+            severity = Console.ReadLine();
         }
     }
     public class Enhancement : Ticket
@@ -48,6 +88,33 @@ namespace TicketService
         {
             return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{software},{cost},{reason},{estimate}";
         }
+        public override void TicketSubmit()
+        {
+            Console.WriteLine("Enter ticket summary: ");
+            summary = Console.ReadLine();
+            Console.WriteLine("Ticket status: ");
+            status = Console.ReadLine();
+            Console.WriteLine("Ticket priority: ");
+            priority = Console.ReadLine();
+            Console.WriteLine("Submitted by: ");
+            submitter = Console.ReadLine();
+            Console.WriteLine("Assigned to: ");
+            assigned = Console.ReadLine();
+            Console.WriteLine("Watched by: (Type \"0\" to Stop");
+            string watch;
+            do{
+                watch = Console.ReadLine();
+                if(watch != "0") watching.Add(watch);
+            } while(watch != "0");
+            Console.WriteLine("Software: ");
+            software = Console.ReadLine();
+            Console.WriteLine("Cost(Leave out signs): ");
+            cost = Double.Parse(Console.ReadLine());
+            Console.WriteLine("Reason: ");
+            reason = Console.ReadLine();
+            Console.WriteLine("Estimated Total Cost: ");
+            estimate = double.Parse(Console.ReadLine());
+        }
     }
     public class Task : Ticket
     {
@@ -60,6 +127,29 @@ namespace TicketService
         public override string ToString()
         {
             return $"{ticketID},{summary},{status},{priority},{submitter},{assigned},{string.Join("|", watching)},{projectName},{duedate}";
+        }
+        public override void TicketSubmit()
+        {
+            Console.WriteLine("Enter ticket summary: ");
+            summary = Console.ReadLine();
+            Console.WriteLine("Ticket status: ");
+            status = Console.ReadLine();
+            Console.WriteLine("Ticket priority: ");
+            priority = Console.ReadLine();
+            Console.WriteLine("Submitted by: ");
+            submitter = Console.ReadLine();
+            Console.WriteLine("Assigned to: ");
+            assigned = Console.ReadLine();
+            Console.WriteLine("Watched by: (Type \"0\" to Stop");
+            string watch;
+            do{
+                watch = Console.ReadLine();
+                if(watch != "0") watching.Add(watch);
+            } while(watch != "0");
+            Console.WriteLine("Task name: ");
+            projectName = Console.ReadLine();
+            Console.WriteLine("Due Date (M/D/YYYY): ");
+            duedate = DateTime.Parse(Console.ReadLine());
         }
     }
 }
