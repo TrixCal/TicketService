@@ -33,12 +33,12 @@ namespace TicketService
             submitter = Console.ReadLine();
             Console.WriteLine("Assigned to: ");
             assigned = Console.ReadLine();
-            Console.WriteLine("Watched by: (Type \"0\" to Stop");
-            string watch;
-            do{
+            Console.WriteLine("Watched by: (Type \"0\" to Stop)");
+            string watch = "";
+            while(watch != "0"){
                 watch = Console.ReadLine();
                 if(watch != "0") watching.Add(watch);
-            } while(watch != "0");
+            }
         }
     }
     public class Bug : Ticket
@@ -64,12 +64,13 @@ namespace TicketService
             submitter = Console.ReadLine();
             Console.WriteLine("Assigned to: ");
             assigned = Console.ReadLine();
-            Console.WriteLine("Watched by: (Type \"0\" to Stop");
-            string watch;
-            do{
+            Console.WriteLine("Watched by: (Type \"0\" to Stop)");
+            watching = new List<string>();
+            string watch = "";
+            while(watch != "0"){
                 watch = Console.ReadLine();
                 if(watch != "0") watching.Add(watch);
-            } while(watch != "0");
+            }
             Console.WriteLine("Severity: ");
             severity = Console.ReadLine();
         }
@@ -100,12 +101,13 @@ namespace TicketService
             submitter = Console.ReadLine();
             Console.WriteLine("Assigned to: ");
             assigned = Console.ReadLine();
-            Console.WriteLine("Watched by: (Type \"0\" to Stop");
-            string watch;
-            do{
+            Console.WriteLine("Watched by: (Type \"0\" to Stop)");
+            watching = new List<string>();
+            string watch = "";
+            while(watch != "0"){
                 watch = Console.ReadLine();
                 if(watch != "0") watching.Add(watch);
-            } while(watch != "0");
+            }
             Console.WriteLine("Software: ");
             software = Console.ReadLine();
             Console.WriteLine("Cost(Leave out signs): ");
@@ -140,12 +142,13 @@ namespace TicketService
             submitter = Console.ReadLine();
             Console.WriteLine("Assigned to: ");
             assigned = Console.ReadLine();
-            Console.WriteLine("Watched by: (Type \"0\" to Stop");
-            string watch;
-            do{
+            Console.WriteLine("Watched by: (Type \"0\" to Stop)");
+            watching = new List<string>();
+            string watch = "";
+            while(watch != "0"){
                 watch = Console.ReadLine();
                 if(watch != "0") watching.Add(watch);
-            } while(watch != "0");
+            }
             Console.WriteLine("Task name: ");
             projectName = Console.ReadLine();
             Console.WriteLine("Due Date (M/D/YYYY): ");
