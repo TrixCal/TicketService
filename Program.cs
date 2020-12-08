@@ -28,10 +28,10 @@ namespace TicketService
                 switch(choice)
                 {
                     case "1":
-                        if(ticketFile.tickets.Count > 0)
+                        if(ticketFile.bugs.Count > 0)
                         {
                             Console.Clear();
-                            foreach(Ticket t in ticketFile.tickets)
+                            foreach(Bug t in ticketFile.bugs)
                             {
                                 Console.WriteLine("----------------------");
                                 Console.WriteLine(t.Display());
@@ -39,46 +39,114 @@ namespace TicketService
                         }
                         else
                         {
-                            logger.Warn("No Tickets Available");
+                            logger.Warn("No Bugs Available");
                         }
-                    break;
-                    case "2":
-                        string[] newTicket = new string[6];
-
-                        Console.WriteLine("Enter ticket summary: ");
-                        newTicket[0] = Console.ReadLine();
-
-                        Console.WriteLine("Ticket status: ");
-                        newTicket[1] = Console.ReadLine();
-
-                        Console.WriteLine("Ticket priority: ");
-                        newTicket[2] = Console.ReadLine();
-
-                        Console.WriteLine("Submitted by: ");
-                        newTicket[3] = Console.ReadLine();
-
-                        Console.WriteLine("Assigned to: ");
-                        newTicket[4] = Console.ReadLine();
-
-                        Console.WriteLine("Watched by: ");
-                        newTicket[5] = Console.ReadLine();
-
-                        ticketFile.AddTicket(new Ticket(newTicket));               
-                    break;
-                    case "3":
-                        if(ticketFile.tickets.Count > 0)
+                        if(ticketFile.enhancements.Count > 0)
                         {
-                            Console.WriteLine("Enter ticket ID to remove: ");
-                            int ticketID;
-                            if(!int.TryParse(Console.ReadLine(), out ticketID))
+                            Console.Clear();
+                            foreach(Enhancement t in ticketFile.enhancements)
                             {
-                                logger.Error("ticketID not int");
+                                Console.WriteLine("----------------------");
+                                Console.WriteLine(t.Display());
                             }
-                            ticketFile.RemoveTicket(ticketID);
                         }
                         else
                         {
-                            logger.Warn("No Tickets Available");
+                            logger.Warn("No Enhancement Available");
+                        }
+                        if(ticketFile.tasks.Count > 0)
+                        {
+                            Console.Clear();
+                            foreach(Task t in ticketFile.tasks)
+                            {
+                                Console.WriteLine("----------------------");
+                                Console.WriteLine(t.Display());
+                            }
+                        }
+                        else
+                        {
+                            logger.Warn("No Tasks Available");
+                        }
+                    break;
+                    case "2":
+                        Console.WriteLine("1)Bugs\n2)Enhancments\n3)Tasks");
+                        Console.WriteLine("Select Ticket Group (Enter #):");
+                        string submitChoice = Console.ReadLine();
+                        if(submitChoice == "1"){
+                            var ticket = new Bug();
+                            ticket.TicketSubmit();
+                            ticketFile.AddTicket(ticket);
+                        }
+                        else if(submitChoice == "2"){
+                            var ticket = new Enhancement();
+                            ticket.TicketSubmit();
+                            ticketFile.AddTicket(ticket);
+                        }
+                        else if(submitChoice == "3"){
+                            var ticket = new Task();
+                            ticket.TicketSubmit();
+                            ticketFile.AddTicket(ticket);
+                        }
+                    break;
+                    case "3":
+                        Console.WriteLine("1)Bugs\n2)Enhancments\n3)Tasks");
+                        Console.WriteLine("Select Ticket Group (Enter #):");
+                        string group = Console.ReadLine();
+                        switch(group){
+                            case "1":
+                            if(ticketFile.bugs.Count > 0)
+                            {
+                                Console.WriteLine("Enter ticket ID to remove: ");
+                                int ticketID;
+                                if(!int.TryParse(Console.ReadLine(), out ticketID))
+                                {
+                                    logger.Error("ticketID not int");
+                                }
+                                Bug ticket = new Bug();
+                                ticket.ticketID = ticketID;
+                                ticketFile.RemoveTicket(ticket);
+                            }
+                            else
+                            {
+                                logger.Warn("No Bugs Available");
+                            }
+                            break;
+                            case "2":
+                            if(ticketFile.enhancements.Count > 0)
+                            {
+                                Console.WriteLine("Enter ticket ID to remove: ");
+                                int ticketID;
+                                if(!int.TryParse(Console.ReadLine(), out ticketID))
+                                {
+                                    logger.Error("ticketID not int");
+                                }
+                                Enhancement ticket = new Enhancement();
+                                ticket.ticketID = ticketID;
+                                ticketFile.RemoveTicket(ticket);
+                            }
+                            else
+                            {
+                                logger.Warn("No Enhancements Available");
+                            }
+                            break;
+                            case "3":
+                            if(ticketFile.tasks.Count > 0)
+                            {
+                                Console.WriteLine("Enter ticket ID to remove: ");
+                                int ticketID;
+                                if(!int.TryParse(Console.ReadLine(), out ticketID))
+                                {
+                                    logger.Error("ticketID not int");
+                                }
+                                Task ticket = new Task();
+                                ticket.ticketID = ticketID;
+                                ticketFile.RemoveTicket(ticket);
+                            }
+                            else
+                            {
+                                logger.Warn("No Tasks Available");
+                            }
+                            break;
                         }
                     break;
                 }
